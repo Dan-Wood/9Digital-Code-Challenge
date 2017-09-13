@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/Dan-Wood/9Digital-Code-Challenge.svg?branch=master)](https://travis-ci.org/Dan-Wood/9Digital-Code-Challenge)
 
+Strider-CD build and deploy - https://strider.flix.link/dan-wood/9digital-code-challenge/
+
 A code challenge set by 9Digital for a NodeJS JSON web service.
 
 <h3>Technical Specifications</h3>
