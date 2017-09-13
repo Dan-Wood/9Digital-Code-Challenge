@@ -88,8 +88,12 @@ Linux HOSTNAME 2.6.32-042stab120.19 #1 SMP Mon Feb 20 20:05:53 MSK 2017 x86_64 G
 
 NGINX is running in front of the application as a reverse proxy and using Let's Encrypt to supply the SSL certificate by using CertBot ( certbot-auto --nginx -d 9digital.DOMAIN ).
 
+<h5>Default NGINX config</h5>
+
+This is the default config used before using CertBot to apply an SSL certificate.
+    
     server {
-            server_name 9digital.flix.link;
+            server_name 9digital.DOMAIN;
     
             location ~ /.well-known {
                     allow all;
