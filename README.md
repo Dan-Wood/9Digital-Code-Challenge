@@ -23,7 +23,7 @@ There must be error handling for invalid JSON with the key or "error" and the HT
 
 Linux machine with internet access.
 
-NodeJS v6.11.0<br>
+NodeJS 6 ( tested on v6.11.0 & v6.11.3 )<br>
 
 <u>Global dependencies</u><br>
 forever<br>
