@@ -1,4 +1,7 @@
 # 9Digital-Code-Challenge
+
+[![Build Status](https://travis-ci.org/Dan-Wood/9Digital-Code-Challenge.svg?branch=master)](https://travis-ci.org/Dan-Wood/9Digital-Code-Challenge)
+
 A code challenge set by 9Digital for a NodeJS JSON web service.
 
 <h3>Technical Specifications</h3>
