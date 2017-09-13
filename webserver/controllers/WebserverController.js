@@ -2,7 +2,6 @@ const
     ApiRoutes = require( `${__dirname}/../../api/routes/ApiRoutes` ),
 
     express = require( 'express' ),
-    morgan = require('morgan'),
     fs = require('fs'),
     debug = require( 'debug' )( 'Webserver::Controller' ),
     bodyParser = require( 'body-parser' );
@@ -16,9 +15,6 @@ class WebserverController {
         // Initialise Express and get the port from .env or apply a default.
         this.app = express();
         this.port = process.env.WEBSERVER_PORT || 3000;
-
-        // Setup logging for the webserver
-        this.setupLogging();
 
         // Setup port, we use the set() method so we can call the getter in our tests
         this.app.set( 'port', this.port );
@@ -39,19 +35,6 @@ class WebserverController {
         new ApiRoutes( this.app )
     }
 
-    /**
-     * Creates an access log file for Epress/Morgan to log HTTP requests to, 200 - 400 - 404 etc.
-     */
-    setupLogging() {
-        const logStream = fs.createWriteStream( `${__dirname}/../../logs/webserver/access.log`, {flags: 'a'} );
-        if (process.env.NODE_ENV === 'prod') {
-            this.app.use(
-                morgan( 'combined', { stream: logStream } )
-            );
-        } else {
-            this.app.use( morgan( 'dev' ) );
-        }
-    }
 }
 
 module.exports = WebserverController;

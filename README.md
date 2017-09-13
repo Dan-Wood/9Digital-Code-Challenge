@@ -100,7 +100,7 @@ This is the default config used before using CertBot to apply an SSL certificate
             }
          location / {
               client_max_body_size 20M;
-              access_log off;
+              access_log on;
               proxy_pass   http://127.0.0.1:8109;
          }
     
