@@ -96,7 +96,7 @@ describe( 'API:' , function() {
 
         supertest( webserver.app )
             .post( '/' )
-            .send( '{"no_data: ""}' )
+            .send( '"no_data: ""' )
             .expect('Content-Type', /json/)
             .expect( 400, done );
     });

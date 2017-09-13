@@ -1,5 +1,6 @@
 const
     debug = require( 'debug' )( 'API::Routes' ),
+    accepts = require( 'express-accepts' ),
     ApiController = require( `${__dirname}/../controllers/ApiController` );
 
 /**
@@ -8,7 +9,7 @@ const
 class ApiRoutes {
     constructor( app ) {
         this.apiController = new ApiController();
-        //
+
         this.app = app;
 
         // Setup express routes
@@ -30,7 +31,7 @@ class ApiRoutes {
     tvShowRoute() {
         debug( 'Show POST route set on /' );
         // Note: we use bind() as express doesn't know the context of this in method show()
-        this.app.post( '/', this.apiController.tvShow.bind( ApiController ) );
+        this.app.post( '/', accepts('application/json'), this.apiController.tvShow.bind( ApiController ) );
     }
 
     /**

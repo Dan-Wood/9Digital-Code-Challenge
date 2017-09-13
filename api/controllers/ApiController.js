@@ -1,5 +1,6 @@
 const
-    debug = require( 'debug' )('API::Controller' );
+    debug = require( 'debug' )('API::Controller' ),
+    isJSON = require('is-json');
 
 /**
  *  API Controller holds methods used for requests on Express Routes
@@ -25,7 +26,7 @@ class ApiController {
         debug( 'Requested to run show route' );
 
         // If no body or no payload return an invalid error.
-        if( !req.body || !req.body.payload || !req.body.payload.length > 0 ) {
+        if( !req.body || (isJSON( req.body, true ) === false) || !req.body.payload || !req.body.payload.length > 0 ) {
             debug( 'No body or no payload sent to us.' );
             return error();
         }

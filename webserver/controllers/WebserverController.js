@@ -20,7 +20,18 @@ class WebserverController {
         this.app.set( 'port', this.port );
 
         // Set express to use body-parser middleware
-        this.app.use(bodyParser.json());
+        //this.app.use( bodyParser.json() );
+
+        this.app.use( bodyParser.json(), function( err, req, res, next ) {
+
+            // Check if our req.body is actually JSON, body-parser will throw an error if it's not, we need to capture that here and display a nice message.
+            if( err.type === 'entity.parse.failed' ) {
+                debug( 'content isn\'t being passed in as JSON' );
+                res.status( 400 ).json( "{'error' : 'Could not decode request: JSON parsing failed'}" )
+            } else {
+                next();
+            }
+        } );
 
         debug( `Setting up Express and listening on port ${this.app.get( 'port' )}` );
         this.server = this.app.listen( this.app.get( 'port' ), function() {

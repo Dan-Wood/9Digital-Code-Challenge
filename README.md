@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/Dan-Wood/9Digital-Code-Challenge.svg?branch=master)](https://travis-ci.org/Dan-Wood/9Digital-Code-Challenge)
 
-Strider-CD build and deploy - https://strider.flix.link/dan-wood/9digital-code-challenge/
-
 A code challenge set by 9Digital for a NodeJS JSON web service.
 
 <h3>Technical Specifications</h3>
@@ -25,8 +23,7 @@ There must be error handling for invalid JSON with the key or "error" and the HT
 
 Linux machine with internet access.
 
-NodeJS v6.11.0 ><br>
-Npm v5.4.0 ><br>
+NodeJS v6.11.0<br>
 
 <u>Global dependencies</u><br>
 forever<br>
