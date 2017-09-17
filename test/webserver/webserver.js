@@ -70,11 +70,11 @@ describe( 'Webserver Start:' , function() {
     });
 
     // Ensure the root ( / ) doesn't allow GET requests
-    it( '/ doesn\'t allow GET requests', function( done ) {
-        "use strict";
-
-        supertest( webserver.app )
-            .get( '/' )
-            .expect( 404, done );
-    });
+    // it( '/ doesn\'t allow GET requests', function( done ) {
+    //     "use strict";
+    //
+    //     supertest( webserver.app )
+    //         .get( '/' )
+    //         .expect( 404, done );
+    // });
 });
