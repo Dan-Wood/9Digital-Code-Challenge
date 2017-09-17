@@ -1,6 +1,8 @@
 const
     debug = require( 'debug' )( 'API::Routes' ),
     accepts = require( 'express-accepts' ),
+    path = require( 'path' ),
+
     ApiController = require( `${__dirname}/../controllers/ApiController` );
 
 /**
@@ -21,8 +23,20 @@ class ApiRoutes {
      */
     setupRoutes() {
         debug( 'Setting up routes' );
+        this.staticRoute();
         this.tvShowRoute();
         this.statusRoute();
+    }
+
+    /**
+     * Static page for HTTP GET requests
+     */
+
+    staticRoute() {
+        this.app.get('*', function(req, res) {
+            res.sendFile(path.resolve('public/index.html'));
+
+        });
     }
 
     /**
