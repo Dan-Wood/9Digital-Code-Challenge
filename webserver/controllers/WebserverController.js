@@ -2,7 +2,6 @@ const
     ApiRoutes = require( `${__dirname}/../../api/routes/ApiRoutes` ),
 
     express = require( 'express' ),
-    fs = require('fs'),
     debug = require( 'debug' )( 'Webserver::Controller' ),
     bodyParser = require( 'body-parser' );
 
